@@ -1,0 +1,24 @@
+<div class="container">
+  <header>
+    <h1><span class="blue-grey-text text-darken-3">UP</span><span class="purple-text">SU</span>: Society Ranking</h1>
+  </header>
+
+  <table class="highlight">
+    <thead>
+      <tr>
+          <th>Society</th>
+          <th># Members</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {{#each leaderboard}}
+      <tr>
+        <td>{{this.title}}</td>
+        <td>{{this.members}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+</div>
