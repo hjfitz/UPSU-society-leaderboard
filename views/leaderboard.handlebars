@@ -1,13 +1,26 @@
 <div class="container">
-  <header>
-    <h1><span class="blue-grey-text text-darken-3">UP</span><span class="purple-text">SU</span>: Society Ranking</h1>
-  </header>
+  <div class="row">
+    <header>
+      <h1><span class="blue-grey-text text-darken-3">UP</span><span class="purple-text">SU</span>: Society Ranking</h1>
+    </header>
+  </div>
 
-  <table class="highlight">
+
+<div class="row">
+  <div class="input-field col s6">
+    <input id="search" type="text" class="validate">
+    <label for="search">Search</label>
+  </div>
+</div>
+
+
+<div class="row">
+
+  <table class="highlight" id='table'>
     <thead>
       <tr>
-          <th>Society</th>
-          <th># Members</th>
+        <th>Society</th>
+        <th># Members</th>
       </tr>
     </thead>
 
@@ -20,5 +33,20 @@
       {{/each}}
     </tbody>
   </table>
-
 </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+  var $rows = $('#table tr');
+$('#search').keyup(function() {
+    
+    var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
+        reg = RegExp(val, 'i'),
+        text;
+    
+    $rows.show().filter(function() {
+        text = $(this).text().replace(/\s+/g, ' ');
+        return !reg.test(text);
+    }).hide();
+});
+</script>
