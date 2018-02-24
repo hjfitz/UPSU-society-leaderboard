@@ -35,8 +35,18 @@ const getText = dom => dom[0].children[0].data.trim();
 const parsePage = page => {
   const $ = cheerio.load(page);
   const title = getText($(socTitleDOM));
+
+  // it's assumed that the slug is based on the soc name
+  // but all lowers and hyphenated
+  const linkSuffix = title
+    .replace(/\([a-zA-Z]*\)/gi, '')
+    .trim()
+    .replace(/ /g, '-')
+    .toLowerCase();
+
+  const link = `https://membership.upsu.net/group/${linkSuffix}`;
   const members = getText($(membersDOM)).replace(/ Members/, '');
-  return { title, members };
+  return { title, link, members };
 };
 
 const sortByMembers = (socA, socB) => {

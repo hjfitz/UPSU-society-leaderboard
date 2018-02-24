@@ -26,10 +26,12 @@
 
     <tbody>
       {{#each leaderboard}}
-      <tr>
-        <td>{{this.title}}</td>
-        <td>{{this.members}}</td>
-      </tr>
+        <tr>
+          <td>
+            <a href="{{this.link}}">{{this.title}}</a>
+          </td>
+          <td>{{this.members}}</td>
+        </tr>
       {{/each}}
     </tbody>
   </table>
