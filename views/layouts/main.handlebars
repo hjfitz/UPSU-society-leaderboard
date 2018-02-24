@@ -8,11 +8,57 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.4/css/materialize.min.css"  media="screen,projection"/>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+    }
 
+  .container {
+    flex: 1;
+  }
+
+  /* messy */
+  footer .container {
+    flex: initial;
+  }
+
+    .hidden {
+      display: none;
+    }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #9c27b0!important;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #9c27b0!important;
+     box-shadow: 0 1px 0 0 #9c27b0!important;
+   }
+
+   .page-footer {
+     padding: 0;
+   }
+       
+
+  </style>
     
 </head>
 <body>
   {{{ body }}}
+
+
+  <footer class="page-footer">
+    <div class="footer-copyright blue-grey darken-4">
+      <div class="container">
+      © 2018 hjf
+      <span class="grey-text text-lighten-4 right">Made with &lt;3 on <a href="https://github.com/hjfitz/UPSU-society-leaderboard">GitHub</a></span>
+      </div>
+    </div>
+  </footer>
+
+
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.4/js/materialize.min.js"></script>
+
 </body>
 </html>

@@ -5,6 +5,7 @@ const express = require('express');
 const path = require('path');
 const compression = require('compression')();
 const helmet = require('helmet')();
+const cors = require('cors')();
 const exphbs = require('express-handlebars');
 
 /**
@@ -24,11 +25,12 @@ const pub = path.join(__dirname, 'public');
  */
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
+app.use(morgan);
 app.use(helmet);
+app.use(cors);
 app.use(compression);
 app.use('/public', express.static(pub));
 app.use('/', scraper);
-app.use(morgan);
 
 /**
  * This middle must be the last one set up
