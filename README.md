@@ -27,26 +27,24 @@ Because there's no RESTFul API for the UPSU, this server provides one. Currently
 ```json
 [
   {
-    title: "Cinema Society",
-    members: "239"
+    "title": "Cinema Society",
+    "members": "239"
   },
   {
-    title: "Islamic Society (ISOC)",
-    members: "222"
+    "title": "Islamic Society (ISOC)",
+    "members": "222"
   },
   {
-    title: "Labour Society",
-    members: "217"
+    "title": "Labour Society",
+    "members": "217"
   },
   {
-    title: "IT Society",
-    members: "199"
+    "title": "IT Society",
+    "members": "199"
   },
   {
-    title: "Gaming Society",
-    members: "193"
+    "title": "Gaming Society",
+    "members": "193"
   }
 ]
 ```
-
-More to come - if there's adequate interest.
